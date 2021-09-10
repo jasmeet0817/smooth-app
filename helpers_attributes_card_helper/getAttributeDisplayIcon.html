@@ -66,21 +66,21 @@
   <pre class="language-dart"><code class="language-dart">Widget getAttributeDisplayIcon(final Attribute attribute) {
   if (attribute.status != Attribute.STATUS_KNOWN || attribute.match == null) {
     &#47;&#47; Default emoji.
-    return Text(&quot;ℹ️  &quot;);
+    return const Text(&#39;ℹ️  &#39;);
   }
   if (attribute.match! &lt; 20) {
-    return Text(&quot;💔  &quot;);
+    return const Text(&#39;💔  &#39;);
   }
   if (attribute.match! &lt; 40) {
-    return Text(&quot;🍂  &quot;);
+    return const Text(&#39;🍂  &#39;);
   }
   if (attribute.match! &lt; 60) {
-    return Text(&quot;🌻  &quot;);
+    return const Text(&#39;🌻  &#39;);
   }
   if (attribute.match! &lt; 80) {
-    return Text(&quot;🌱  &quot;);
+    return const Text(&#39;🌱  &#39;);
   }
-  return Text(&quot;💚  &quot;);
+  return const Text(&#39;💚  &#39;);
 }</code></pre>
 </section>
 
