@@ -64,23 +64,14 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Widget getAttributeDisplayIcon(final Attribute attribute) {
-  if (attribute.status != Attribute.STATUS_KNOWN || attribute.match == null) {
-    &#47;&#47; Default emoji.
-    return const Text(&#39;ℹ️  &#39;);
-  }
-  if (attribute.match! &lt; 20) {
-    return const Text(&#39;💔  &#39;);
-  }
-  if (attribute.match! &lt; 40) {
-    return const Text(&#39;🍂  &#39;);
-  }
-  if (attribute.match! &lt; 60) {
-    return const Text(&#39;🌻  &#39;);
-  }
-  if (attribute.match! &lt; 80) {
-    return const Text(&#39;🌱  &#39;);
-  }
-  return const Text(&#39;💚  &#39;);
+  return _attributeMatchComparison(
+      attribute,
+      const Text(&#39;ℹ️  &#39;),
+      const Text(&#39;💔  &#39;),
+      const Text(&#39;🍂  &#39;),
+      const Text(&#39;🌻  &#39;),
+      const Text(&#39;🌱  &#39;),
+      const Text(&#39;💚  &#39;)) as Widget;
 }</code></pre>
 </section>
 

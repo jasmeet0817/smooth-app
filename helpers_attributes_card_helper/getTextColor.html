@@ -64,23 +64,14 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Color getTextColor(final Attribute attribute) {
-  if (attribute.status == Attribute.STATUS_KNOWN &amp;&amp; attribute.match != null) {
-    if (attribute.match! &lt;= 20) {
-      return const Color.fromARGB(1, 235, 87, 87);
-    }
-    if (attribute.match! &lt;= 40) {
-      return const Color.fromARGB(1, 242, 153, 74);
-    }
-    if (attribute.match! &lt;= 60) {
-      return const Color.fromARGB(255, 149, 116, 0);
-    }
-    if (attribute.match! &lt;= 80) {
-      return const Color.fromARGB(1, 133, 187, 47);
-    }
-    return const Color.fromARGB(1, 3, 129, 65);
-  } else {
-    return const Color.fromARGB(1, 75, 75, 75);
-  }
+  return _attributeMatchComparison(
+      attribute,
+      const Color.fromARGB(1, 75, 75, 75),
+      const Color.fromARGB(1, 235, 87, 87),
+      const Color.fromARGB(1, 242, 153, 74),
+      const Color.fromARGB(255, 149, 116, 0),
+      const Color.fromARGB(1, 133, 187, 47),
+      const Color.fromARGB(1, 3, 129, 65)) as Color;
 }</code></pre>
 </section>
 
