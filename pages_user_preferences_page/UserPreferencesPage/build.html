@@ -113,7 +113,7 @@ Widget build(BuildContext context) {
       context.watch&lt;ProductPreferences&gt;();
   final List&lt;AttributeGroup&gt; groups =
       _reorderGroups(productPreferences.attributeGroups!);
-  final List&lt;String&gt; orderedImportantAttributeIds =
+  List&lt;String&gt; orderedImportantAttributeIds =
       productPreferences.getOrderedImportantAttributeIds();
   return Scaffold(
     appBar: AppBar(
@@ -144,7 +144,10 @@ Widget build(BuildContext context) {
           groups[index],
           userPreferences,
           productPreferences,
-          _reorderAttributes(groups[index], orderedImportantAttributeIds),
+          _reorderAttributes(
+            _filterPermanentAttributes(groups[index].attributes!),
+            orderedImportantAttributeIds,
+          ),
         ),
       ),
     ),
