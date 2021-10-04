@@ -144,10 +144,7 @@ Widget build(BuildContext context) {
           groups[index],
           userPreferences,
           productPreferences,
-          _reorderAttributes(
-            _filterPermanentAttributes(groups[index].attributes!),
-            orderedImportantAttributeIds,
-          ),
+          _reorderAttributes(groups[index], orderedImportantAttributeIds),
         ),
       ),
     ),
