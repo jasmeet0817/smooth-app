@@ -79,7 +79,7 @@
     &#47;&#47; [knowledgePanelElementWidgets] are a set of widgets inside the root panel.
     final List&lt;Widget&gt; knowledgePanelElementWidgets = &lt;Widget&gt;[];
     for (final KnowledgePanelElement knowledgePanelElement
-        in rootKnowledgePanel.elements) {
+        in rootKnowledgePanel.elements ?? &lt;KnowledgePanelElement&gt;[]) {
       knowledgePanelElementWidgets.add(KnowledgePanelElementCard(
         knowledgePanelElement: knowledgePanelElement,
         allPanels: knowledgePanels,
