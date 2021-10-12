@@ -119,6 +119,10 @@ Widget build(BuildContext context) {
     case KnowledgePanelElementType.PANEL:
       return KnowledgePanelSummaryCard(allPanels
           .panelIdToPanelMap[knowledgePanelElement.panelElement!.panelId]!);
+    case KnowledgePanelElementType.PANEL_GROUP:
+      return KnowledgePanelGroupCard(
+          groupElement: knowledgePanelElement.panelGroupElement!,
+          allPanels: allPanels);
     default:
       throw UnsupportedError(
           &#39;ElementType not supported yet: ${knowledgePanelElement.elementType}&#39;);
